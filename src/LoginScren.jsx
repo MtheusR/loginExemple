@@ -8,13 +8,17 @@ function LoginScren() {
 					<img src={logoLongchat} alt="logo longchat" />
 				</div>
 				<div>
-					<form action="">
-						<p>Usuário</p>
+					<form action="#" method="POST">
+						<label for="email" class="block">
+							Usuário
+						</label>
 						<InptCustom tipo="email" />
-						<p>Senha</p>
+						<label for="password" class="block">
+							Senha
+						</label>
 						<InptCustom tipo="password" />
 					</form>
-					<button className="bg-green-800 text-white py-3 rounded-md min-w-[315px]">
+					<button className="bg-green-800 text-white py-3 rounded-md min-w-[315px] font-medium focus:outline-none hover:bg-green-700">
 						Login
 					</button>
 				</div>
@@ -28,7 +32,7 @@ function InptCustom({ tipo }) {
 
 	return (
 		<input
-			className="pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2"
+			className="block pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2 border  focus:outline-1 focus:outline-green-900"
 			placeholder={textPlaceholder}
 			type={tipo}
 		/>
