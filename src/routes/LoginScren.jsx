@@ -1,9 +1,15 @@
-import logoLongchat from './img/logo-longchat.svg';
+import logoLongchat from '../img/logo-longchat.svg';
+import { useNavigate } from 'react-router-dom';
 
 function LoginScren() {
+	const navigate = useNavigate(); // Hook para navegação
+
+	const handleClick = () => {
+		navigate('/home'); // Navega para a rota '/'
+	};
 	return (
 		<>
-			<div className="flex gap-12 items-center">
+			<div className="flex flex-wrap items-center justify-center gap-12">
 				<div className="px-16 py-20 bg-green-800 rounded-2xl">
 					<img src={logoLongchat} alt="logo longchat" />
 				</div>
@@ -18,7 +24,10 @@ function LoginScren() {
 						</label>
 						<InptCustom tipo="password" />
 					</form>
-					<button className="bg-green-800 text-white py-3 rounded-md min-w-[315px] font-medium focus:outline-none hover:bg-green-700">
+					<button
+						onClick={handleClick}
+						className="bg-green-800 text-white py-3 rounded-md min-w-[315px] font-medium focus:outline-none hover:bg-green-700"
+					>
 						Login
 					</button>
 				</div>
@@ -32,7 +41,7 @@ function InptCustom({ tipo }) {
 
 	return (
 		<input
-			className="block pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2 border  focus:outline-1 focus:outline-green-900"
+			className="block pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2 focus:outline-1 focus:outline-green-900"
 			placeholder={textPlaceholder}
 			type={tipo}
 		/>
