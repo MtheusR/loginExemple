@@ -5,11 +5,18 @@ import './index.css';
 import App from './App.jsx';
 import Home from './routes/home.jsx';
 import PageNotFound from './routes/PageNotFound.jsx';
+import LoginScreen from './routes/LoginScreen.jsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
+		errorElement: <PageNotFound />,
+		// children: [{ path: '/home', element: <Home /> }],
+	},
+	{
+		path: '/login',
+		element: <LoginScreen />,
 		errorElement: <PageNotFound />,
 		// children: [{ path: '/home', element: <Home /> }],
 	},
