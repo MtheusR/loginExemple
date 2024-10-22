@@ -1,5 +1,6 @@
 import LoginScren from './routes/LoginScren';
 import { Outlet } from 'react-router';
+
 function App() {
 	return (
 		<div className="flex items-center justify-center  h-screen w-full bg-backgoround-1">
