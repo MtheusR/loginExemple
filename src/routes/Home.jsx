@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logoIcon from '../img/icon-longchat.svg';
 import { FaHouse } from 'react-icons/fa6';
-import { HiChatBubbleLeftRight } from 'react-icons/hi2';
+import { BsFillChatLeftFill } from 'react-icons/bs';
 
 const Sidebar = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	// const [isOpen, setIsOpen] = useState(false);
 
-	const toggleSidebar = () => {
-		setIsOpen(!isOpen);
-	};
+	// const toggleSidebar = () => {
+	// 	setIsOpen(!isOpen);
+	// };
 
 	return (
 		<div className="flex">
 			<div
 				className={
-					'flex flex-col w-20 h-screen bg-green-900 text-white transition-all duration-300'
+					'flex flex-col h-screen bg-green-900 text-white transition-all duration-300'
 				}
 			>
-				<img className="p-3" src={logoIcon} alt="icone longchat" />
-				<nav className="flex flex-col items-center">
-					<ul>
-						<li className="flex flex-col items-center hover:bg-green-800 rounded-lg">
+				<img className="p-5" src={logoIcon} alt="icone longchat" />
+				<nav className="mt-5 mx-2">
+					<ul className="flex flex-col gap-2">
+						<li className="flex flex-col items-center text-lg py-3 hover:bg-green-800 rounded-lg transition-all duration-300">
 							<FaHouse />
 						</li>
-
-						<li className="p-4 hover:bg-gray-700 cursor-pointer">Item 1</li>
+						<li className="flex flex-col items-center text-lg py-3 hover:bg-green-800 rounded-lg transition-all duration-300">
+							<BsFillChatLeftFill />
+						</li>
 					</ul>
 				</nav>
 			</div>

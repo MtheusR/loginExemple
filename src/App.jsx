@@ -1,5 +1,6 @@
+import React from 'react';
 import LoginScreen from './routes/LoginScreen';
-import { Outlet } from 'react-router';
+// import { Outlet } from 'react-router';
 
 function App() {
 	return (
