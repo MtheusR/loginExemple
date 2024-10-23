@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
 import App from "./App.jsx";
-import HomeSreen from "./routes/Home.jsx";
-import ChatScreen from "./routes/chat.jsx";
+import DashboardScreen from "./routes/DashboardScreen.jsx";
+import AtendimentosScreen from "./routes/AtendimentosScreen.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
 import LoginScreen from "./routes/LoginScreen.jsx";
 
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <PageNotFound />,
     children: [
-      { path: "/home", element: <HomeSreen /> },
-      { path: "/chat", element: <ChatScreen /> },
+      { path: "/dashboard", element: <DashboardScreen /> },
+      { path: "/atendimentos", element: <AtendimentosScreen /> },
     ],
   },
   {

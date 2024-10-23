@@ -1,13 +1,13 @@
 import React from "react";
 import { Tooltip } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function ItemSideBar({ icon: Icon, label, path }) {
   const navigate = useNavigate();
 
   return (
     <Tooltip
-      className="bg-green-800 ml-2"
+      className="bg-principais-green01 ml-2"
       content={label}
       placement="right"
       animate={{
@@ -15,12 +15,16 @@ function ItemSideBar({ icon: Icon, label, path }) {
         unmount: { scale: 0, x: -25 },
       }}
     >
-      <li
-        onClick={() => navigate(path)}
-        className="relative flex flex-col items-center text-xl py-3 hover:bg-green-800 rounded-lg transition-all duration-300"
+      <NavLink
+        to={path}
+        className={({ isActive }) =>
+          `relative flex flex-col items-center text-xl py-3 rounded-lg transition-all duration-300 cursor-pointer ${
+            isActive ? "bg-principais-green02" : "hover:bg-principais-green03"
+          }`
+        }
       >
         {Icon && <Icon />}
-      </li>
+      </NavLink>
     </Tooltip>
   );
 }

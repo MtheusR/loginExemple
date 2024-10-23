@@ -13,7 +13,13 @@ module.exports = withMT ({
       colors: {
         'backgoround':{
           1: '#F0F4F0',
+        },
+        'principais':{
+          green01: '#016732',
+          green02: '#004521',
+          green03: '#017E3D',
         }
+        
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

@@ -51,7 +51,7 @@ function LoginScreen() {
     <>
       <div className="flex items-center justify-center  h-screen w-full bg-backgoround-1">
         <div className="flex flex-wrap items-center justify-center gap-12">
-          <div className="px-16 py-24 bg-green-800 rounded-2xl">
+          <div className="px-16 py-24 bg-principais-green01 rounded-2xl">
             <img src={logoLongchat} alt="logo longchat" />
           </div>
           <div>
@@ -84,7 +84,7 @@ function LoginScreen() {
 
               <button
                 type="submit"
-                className="bg-green-800 text-white py-3 rounded-md min-w-[315px] font-medium focus:outline-none focus:bg-green-700 hover:bg-green-700"
+                className="bg-principais-green01 text-white py-3 rounded-md min-w-[315px] font-medium focus:outline-none focus:bg-principais-green03 hover:bg-principais-green03"
               >
                 Login
               </button>
