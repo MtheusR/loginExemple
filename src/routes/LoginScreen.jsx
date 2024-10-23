@@ -1,19 +1,26 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import logoLongchat from '../img/logo-longchat.svg';
 import { useNavigate } from 'react-router-dom';
 
-function InputLoginCustom({ tipo, value, setValor, authStatus, setAuth }) {
+function InputLoginCustom({
+	tipo,
+	inputValue,
+	setInputValue,
+	errorLogin,
+	setErrorLogin,
+}) {
 	let textPlaceholder = tipo == 'email' ? 'seu@email.com' : '********';
 
 	return (
 		<input
-			className={`block pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2 focus:outline-1 focus:outline-green-900 ${authStatus ? '' : 'border-solid border-2 border-red-500 bg-red-50'}`}
+			className={`block pl-2 py-3 rounded-md min-w-[315px] mb-6 mt-2 focus:outline-1 focus:outline-green-900 ${errorLogin ? '' : 'border-solid border-2 border-red-500 bg-red-50'}`}
 			placeholder={textPlaceholder}
 			type={tipo}
-			value={value}
+			value={inputValue}
 			onChange={(evento) => {
-				setValor(evento.target.value);
-				setAuth(true);
+				setInputValue(evento.target.value);
+				setErrorLogin(true);
 			}}
 			required
 		/>
@@ -23,20 +30,20 @@ function InputLoginCustom({ tipo, value, setValor, authStatus, setAuth }) {
 function LoginScreen() {
 	const navigate = useNavigate();
 
-	const [email, setEmail] = React.useState('');
-	const [senha, setSenha] = React.useState('');
-	const [auth, setAuth] = React.useState(true);
+	const [inputEmail, setInputEmail] = React.useState('');
+	const [inputPassword, setInputPassword] = React.useState('');
+	const [loginError, setLoginError] = React.useState(true);
 
 	const verificarAutenticacao = (emailAuth, senhaAuth) =>
 		emailAuth === 'admin@admin.com' && senhaAuth === '123';
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (verificarAutenticacao(email, senha)) {
+		if (verificarAutenticacao(inputEmail, inputPassword)) {
 			navigate('/home');
-			setAuth(true);
+			setLoginError(true);
 		} else {
-			setAuth(false);
+			setLoginError(false);
 		}
 	};
 
@@ -54,23 +61,23 @@ function LoginScreen() {
 							</label>
 							<InputLoginCustom
 								tipo="email"
-								value={email}
-								setValor={setEmail}
-								authStatus={auth}
-								setAuth={setAuth}
+								inputValue={inputEmail}
+								setInputValue={setInputEmail}
+								errorLogin={loginError}
+								setErrorLogin={setLoginError}
 							/>
 							<label htmlFor="password" className="block">
 								Senha
 							</label>
 							<InputLoginCustom
 								tipo="password"
-								value={senha}
-								setValor={setSenha}
-								authStatus={auth}
-								setAuth={setAuth}
+								inputValue={inputPassword}
+								setInputValue={setInputPassword}
+								errorLogin={loginError}
+								setErrorLogin={setLoginError}
 							/>
 							<p
-								className={`text-red-600 text-sm mb-6 ${auth ? 'hidden' : ''}`}
+								className={`text-red-600 text-sm mb-6 ${loginError ? 'hidden' : ''}`}
 							>
 								Email ou Senha incorreto, tente novamente!
 							</p>
