@@ -17,20 +17,35 @@ const Sidebar = () => {
       id: 1,
       label: "Dashboard",
       icon: MdOutlineSpaceDashboard,
+      iconActive: MdSpaceDashboard,
       path: "/dashboard",
     },
     {
       id: 2,
       label: "Atendimentos",
       icon: HiOutlineChatBubbleLeftRight,
+      iconActive: HiChatBubbleLeftRight,
       path: "/atendimentos",
     },
-    { id: 3, label: "Etiquetas", icon: PiTagSimpleBold, path: "/etiquetas" },
-    { id: 4, label: "Usuários", icon: PiUsersBold, path: "/usuarios" },
+    {
+      id: 3,
+      label: "Etiquetas",
+      icon: PiTagSimpleBold,
+      iconActive: PiTagSimpleFill,
+      path: "/etiquetas",
+    },
+    {
+      id: 4,
+      label: "Usuários",
+      icon: PiUsersBold,
+      iconActive: PiUsersFill,
+      path: "/usuarios",
+    },
     {
       id: 5,
       label: "Configuração",
       icon: RiSettings3Line,
+      iconActive: RiSettings3Fill,
       path: "/configuracao",
     },
   ];
@@ -46,6 +61,7 @@ const Sidebar = () => {
                 key={itensSideBar.id}
                 label={itensSideBar.label}
                 icon={itensSideBar.icon}
+                iconActive={itensSideBar.iconActive}
                 path={itensSideBar.path}
               />
             ))}

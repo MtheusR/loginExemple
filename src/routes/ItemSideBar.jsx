@@ -2,7 +2,7 @@ import React from "react";
 import { Tooltip } from "@material-tailwind/react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-function ItemSideBar({ icon: Icon, label, path }) {
+function ItemSideBar({ icon: Icon, iconActive: IconActive, label, path }) {
   const navigate = useNavigate();
 
   return (
@@ -23,7 +23,9 @@ function ItemSideBar({ icon: Icon, label, path }) {
           }`
         }
       >
-        {Icon && <Icon />}
+        {({ isActive }) => (
+          <>{isActive && IconActive ? <IconActive /> : <Icon />}</>
+        )}
       </NavLink>
     </Tooltip>
   );
