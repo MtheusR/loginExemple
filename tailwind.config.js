@@ -18,6 +18,7 @@ module.exports = withMT ({
           green01: '#016732',
           green02: '#004521',
           green03: '#017E3D',
+          orange:  '#FE7D05',
         }
         
       },

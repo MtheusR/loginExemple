@@ -52,7 +52,7 @@ const Sidebar = () => {
 
   return (
     <aside className="flex">
-      <div className="flex flex-col h-screen bg-principais-green01 text-white transition-all duration-300 relative">
+      <div className="flex flex-col h-screen bg-principais-green01 text-white transition-all duration-300 relative min-w-[80px]">
         <img className="p-5" src={logoIcon} alt="icone longchat" />
         <nav className="m-2">
           <ul className="flex flex-col gap-4">
